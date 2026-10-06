@@ -1,0 +1,4 @@
+'use client';
+import {create} from 'zustand';import {persist} from 'zustand/middleware';import {CartItem,Product} from '@/types';
+interface CartState{items:CartItem[];add:(p:Product)=>void;remove:(id:string)=>void;setQty:(id:string,q:number)=>void;clear:()=>void;subtotal:()=>number}
+export const useCart=create<CartState>()(persist((set,get)=>({items:[],add:p=>set(s=>{const x=s.items.find(i=>i.product.id===p.id);return {items:x?s.items.map(i=>i.product.id===p.id?{...i,quantity:i.quantity+1}:i):[...s.items,{product:p,quantity:1}]}}),remove:id=>set(s=>({items:s.items.filter(i=>i.product.id!==id)})),setQty:(id,q)=>set(s=>({items:q<1?s.items:s.items.map(i=>i.product.id===id?{...i,quantity:q}:i)})),clear:()=>set({items:[]}),subtotal:()=>get().items.reduce((a,i)=>a+i.product.price*i.quantity,0)}),{name:'lzzy-cart'}));
