@@ -1,1 +1,27 @@
-import {notFound} from 'next/navigation';import ProductGrid from '@/components/product/ProductGrid';import {products,brands} from '@/data/products';export default function Brand({params}:{params:{slug:string}}){const name=brands.find(b=>b.toLowerCase().replaceAll(' ','-')===params.slug);if(!name)return notFound();const items=products.filter(p=>p.brand===name);return <main className="container-x py-12"><div className="rounded-2xl border border-border bg-card p-8"><p className="text-sm uppercase tracking-widest text-blue-400">Official brand collection</p><h1 className="mt-2 text-4xl font-black">{name}</h1><p className="mt-3 max-w-2xl text-muted">Discover {name} peripherals available through Lzzy Tech, with customer-focused availability and Cash on Delivery.</p></div><div className="mt-10"><ProductGrid products={items}/></div></main>}
+import { notFound } from "next/navigation";
+import ProductGrid from "@/components/product/ProductGrid";
+import { products, brands } from "@/data/products";
+export default function Brand({ params }: { params: { slug: string } }) {
+  const name = brands.find(
+    (b) => b.toLowerCase().replaceAll(" ", "-") === params.slug,
+  );
+  if (!name) return notFound();
+  const items = products.filter((p) => p.brand === name);
+  return (
+    <main className="container-x py-12">
+      <div className="rounded-2xl border border-border bg-card p-8">
+        <p className="text-sm uppercase tracking-widest text-blue-400">
+          Official brand collection
+        </p>
+        <h1 className="mt-2 text-4xl font-black">{name}</h1>
+        <p className="mt-3 max-w-2xl text-muted">
+          Discover {name} peripherals available through Lzzy Tech, with
+          customer-focused availability and Cash on Delivery.
+        </p>
+      </div>
+      <div className="mt-10">
+        <ProductGrid products={items} />
+      </div>
+    </main>
+  );
+}

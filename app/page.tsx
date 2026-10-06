@@ -1,1 +1,4 @@
-import HomeSections from '@/components/sections/HomeSections';export default function Home(){return <HomeSections/>}
+import HomeSections from "@/components/sections/HomeSections";
+export default function Home() {
+  return <HomeSections />;
+}
