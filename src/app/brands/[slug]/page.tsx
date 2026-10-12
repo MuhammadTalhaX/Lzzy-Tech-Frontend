@@ -1,5 +1,55 @@
-import { notFound } from "next/navigation";import type { Metadata } from "next";import { brands,products } from "@/data/products";import { ProductCard } from "@/components/product-card";import Link from "next/link";
-const slugify=(s:string)=>s.toLowerCase().replaceAll(" ","-");
-export function generateStaticParams(){return brands.map(b=>({slug:slugify(b)}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const b=brands.find(x=>slugify(x)===slug);return {title:b??"Brand"};}
-export default async function BrandPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const brand=brands.find(b=>slugify(b)===decodeURIComponent(slug));if(!brand)notFound();const items=products.filter(p=>p.brand===brand);return <div className="page-container"><div className="page-heading"><span className="eyebrow">BRAND / SAMPLE CATALOGUE</span><h1>{brand}.</h1><p>Explore sample products listed under {brand}. Confirm product variants and availability before publishing.</p></div>{items.length?<div className="product-grid page-bottom-space">{items.map(p=><ProductCard key={p.id} product={p}/>)}</div>:<div className="empty-state page-bottom-space"><h2>More products coming soon.</h2><p>There are no sample products for this brand yet.</p><Link href="/products" className="button button-dark">Browse all products</Link></div>}</div>}
+import { notFound } from "next/navigation";
+import type { Metadata } from "next";
+import { brands, products } from "@/data/products";
+import { ProductCard } from "@/components/product-card";
+import Link from "next/link";
+const slugify = (s: string) => s.toLowerCase().replaceAll(" ", "-");
+export function generateStaticParams() {
+  return brands.map((b) => ({ slug: slugify(b) }));
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const b = brands.find((x) => slugify(x) === slug);
+  return { title: b ?? "Brand" };
+}
+export default async function BrandPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const brand = brands.find((b) => slugify(b) === decodeURIComponent(slug));
+  if (!brand) notFound();
+  const items = products.filter((p) => p.brand === brand);
+  return (
+    <div className="page-container">
+      <div className="page-heading">
+        <span className="eyebrow">BRAND / SAMPLE CATALOGUE</span>
+        <h1>{brand}.</h1>
+        <p>
+          Explore sample products listed under {brand}. Confirm product variants
+          and availability before publishing.
+        </p>
+      </div>
+      {items.length ? (
+        <div className="product-grid page-bottom-space">
+          {items.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty-state page-bottom-space">
+          <h2>More products coming soon.</h2>
+          <p>There are no sample products for this brand yet.</p>
+          <Link href="/products" className="button button-dark">
+            Browse all products
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}

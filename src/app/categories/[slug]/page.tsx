@@ -1,4 +1,55 @@
-import { notFound } from "next/navigation";import Link from "next/link";import type { Metadata } from "next";import { categories,products } from "@/data/products";import { ProductCard } from "@/components/product-card";
-export function generateStaticParams(){return categories.map(c=>({slug:c.slug}));}
-export async function generateMetadata({params}:{params:Promise<{slug:string}>}):Promise<Metadata>{const {slug}=await params;const c=categories.find(x=>x.slug===slug);return {title:c?.name??"Category"};}
-export default async function CategoryPage({params}:{params:Promise<{slug:string}>}){const {slug}=await params;const category=categories.find(c=>c.slug===slug);if(!category)notFound();const items=products.filter(p=>p.category.toLowerCase()===category.name.toLowerCase());return <div className="page-container"><div className="page-heading"><span className="eyebrow">CATEGORY / {category.name}</span><h1>{category.name}.</h1><p>{category.count}. Browse the sample catalogue below.</p></div>{items.length?<div className="product-grid page-bottom-space">{items.map(p=><ProductCard key={p.id} product={p}/>)}</div>:<div className="empty-state page-bottom-space"><h2>More picks are on the way.</h2><p>This sample catalogue doesn’t have products in this category yet.</p><Link href="/products" className="button button-dark">Explore all products</Link></div>}</div>}
+import { notFound } from "next/navigation";
+import Link from "next/link";
+import type { Metadata } from "next";
+import { categories, products } from "@/data/products";
+import { ProductCard } from "@/components/product-card";
+export function generateStaticParams() {
+  return categories.map((c) => ({ slug: c.slug }));
+}
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const c = categories.find((x) => x.slug === slug);
+  return { title: c?.name ?? "Category" };
+}
+export default async function CategoryPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const category = categories.find((c) => c.slug === slug);
+  if (!category) notFound();
+  const items = products.filter(
+    (p) => p.category.toLowerCase() === category.name.toLowerCase(),
+  );
+  return (
+    <div className="page-container">
+      <div className="page-heading">
+        <span className="eyebrow">CATEGORY / {category.name}</span>
+        <h1>{category.name}.</h1>
+        <p>{category.count}. Browse the sample catalogue below.</p>
+      </div>
+      {items.length ? (
+        <div className="product-grid page-bottom-space">
+          {items.map((p) => (
+            <ProductCard key={p.id} product={p} />
+          ))}
+        </div>
+      ) : (
+        <div className="empty-state page-bottom-space">
+          <h2>More picks are on the way.</h2>
+          <p>
+            This sample catalogue doesn’t have products in this category yet.
+          </p>
+          <Link href="/products" className="button button-dark">
+            Explore all products
+          </Link>
+        </div>
+      )}
+    </div>
+  );
+}

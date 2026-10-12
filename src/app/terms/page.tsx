@@ -1,3 +1,40 @@
 import type { Metadata } from "next";
-export const metadata:Metadata={title:"Terms & Conditions"};
-export default function TermsPage(){return <div className="page-container content-page"><div className="page-heading"><span className="eyebrow">THE IMPORTANT DETAILS</span><h1>Terms & conditions.</h1><p>Draft content for review — not legal advice and not yet approved for publication.</p></div><h2>1. Website preview</h2><p>This website is a frontend demonstration for Lzzy Tech. Product information, prices, availability, and promotional content may be illustrative and should be verified before a public launch.</p><h2>2. Product information</h2><p>Final product descriptions, specifications, prices, warranty terms, delivery options, and availability must be confirmed by the store before purchase functionality is enabled.</p><h2>3. Orders and payments</h2><p>This preview does not accept or process orders or payments. No purchase is completed through the current demonstration.</p><h2>4. Future policies</h2><p>Return, exchange, delivery, warranty, and payment terms must be added and reviewed before the website is used for commercial transactions.</p><h2>5. Contact</h2><p>Official business contact details will be published when confirmed.</p></div>}
+export const metadata: Metadata = { title: "Terms & Conditions" };
+export default function TermsPage() {
+  return (
+    <div className="page-container content-page">
+      <div className="page-heading">
+        <span className="eyebrow">THE IMPORTANT DETAILS</span>
+        <h1>Terms & conditions.</h1>
+        <p>
+          Draft content for review — not legal advice and not yet approved for
+          publication.
+        </p>
+      </div>
+      <h2>1. Website preview</h2>
+      <p>
+        This website is a frontend demonstration for Lzzy Tech. Product
+        information, prices, availability, and promotional content may be
+        illustrative and should be verified before a public launch.
+      </p>
+      <h2>2. Product information</h2>
+      <p>
+        Final product descriptions, specifications, prices, warranty terms,
+        delivery options, and availability must be confirmed by the store before
+        purchase functionality is enabled.
+      </p>
+      <h2>3. Orders and payments</h2>
+      <p>
+        This preview does not accept or process orders or payments. No purchase
+        is completed through the current demonstration.
+      </p>
+      <h2>4. Future policies</h2>
+      <p>
+        Return, exchange, delivery, warranty, and payment terms must be added
+        and reviewed before the website is used for commercial transactions.
+      </p>
+      <h2>5. Contact</h2>
+      <p>Official business contact details will be published when confirmed.</p>
+    </div>
+  );
+}

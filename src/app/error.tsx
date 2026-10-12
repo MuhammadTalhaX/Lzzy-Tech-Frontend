@@ -1,2 +1,18 @@
 "use client";
-export default function Error({reset}:{error:Error&{digest?:string};reset:()=>void}){return <div className="not-found"><span className="eyebrow">A SMALL DETOUR</span><h1>That didn’t go as planned.</h1><p>Please try loading this page again.</p><button className="button button-dark" onClick={()=>reset()}>Try again</button></div>}
+export default function Error({
+  reset,
+}: {
+  error: Error & { digest?: string };
+  reset: () => void;
+}) {
+  return (
+    <div className="not-found">
+      <span className="eyebrow">A SMALL DETOUR</span>
+      <h1>That didn’t go as planned.</h1>
+      <p>Please try loading this page again.</p>
+      <button className="button button-dark" onClick={() => reset()}>
+        Try again
+      </button>
+    </div>
+  );
+}

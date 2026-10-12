@@ -1,1 +1,11 @@
-export default function Loading(){return <div className="page-container"><div className="page-heading"><span className="eyebrow">ONE MOMENT</span><h1>Getting things ready.</h1><p>Loading the collection…</p></div></div>}
+export default function Loading() {
+  return (
+    <div className="page-container">
+      <div className="page-heading">
+        <span className="eyebrow">ONE MOMENT</span>
+        <h1>Getting things ready.</h1>
+        <p>Loading the collection…</p>
+      </div>
+    </div>
+  );
+}
