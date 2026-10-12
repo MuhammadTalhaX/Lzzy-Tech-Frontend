@@ -1,0 +1,3 @@
+import type { Metadata } from "next";import { CartView } from "@/components/cart-view";
+export const metadata:Metadata={title:"Your Cart",description:"Review the items in your Lzzy Tech cart."};
+export default function CartPage(){return <div className="page-container"><div className="page-heading"><span className="eyebrow">YOUR SELECTION</span><h1>Your bag.</h1><p>A quick look at the things you picked.</p></div><CartView/></div>}

@@ -1,2 +1,7 @@
-import type {Config} from 'tailwindcss';
-const config:Config={content:['./app/**/*.{ts,tsx}','./components/**/*.{ts,tsx}'],theme:{extend:{colors:{bg:'#070B12',surface:'#0B1220',card:'#111827',elevated:'#151F2E',brand:'#2563EB',cyan:'#22D3EE',muted:'#94A3B8',border:'#1E293B'}}},plugins:[]}; export default config;
+import type { Config } from "tailwindcss";
+const config: Config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  theme: { extend: { colors: { ivory: "#F5F3EE", graphite: "#252724", olive: "#7B8065", stone: "#E6E3DB", muted: "#777970", surface: "#EFEEE8" }, fontFamily: { sans: ["var(--font-dm-sans)"], display: ["var(--font-manrope)"] } } },
+  plugins: []
+};
+export default config;
