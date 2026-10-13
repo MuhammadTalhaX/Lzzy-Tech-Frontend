@@ -103,11 +103,6 @@ export function HeroShowcase() {
               sizes="(max-width: 700px) calc(100vw - 36px), 900px"
             />
           </div>
-
-          <div className="showcase-caption">
-            <span>{heroImage.brand}</span>
-            <strong>{heroImage.category}</strong>
-          </div>
         </Link>
       </div>
 

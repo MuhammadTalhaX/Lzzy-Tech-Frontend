@@ -2109,22 +2109,50 @@ body {
   .desktop-nav {
     display: none;
   }
+
   .editorial-hero {
-    padding-top: 43px;
+    padding-top: 30px;
   }
+
   .editorial-hero-copy {
     padding-inline: 20px;
   }
+
+  /* Main Heading */
   .editorial-hero h1 {
-    font-size: clamp(39px, 10.5vw, 52px);
-    letter-spacing: -0.06em;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 1.05;
   }
+
+  /* Description */
   .editorial-hero-copy p {
-    font-size: 13px;
+    font-size: 16px;
+    line-height: 1.7;
     margin: 15px 0 20px;
   }
+
+  /* Eyebrow Text */
+  .editorial-hero .eyebrow {
+    font-size: 14px;
+  }
+
+  /* Mobile */
+  @media (max-width: 640px) {
+    .editorial-hero h1 {
+      font-size: clamp(2.25rem, 8vw, 3.25rem);
+    }
+
+    .editorial-hero-copy p {
+      font-size: 14px;
+    }
+
+    .editorial-hero .eyebrow {
+      font-size: 12px;
+    }
+  }
+
   .showcase-window {
-    margin-top: 35px;
+    margin-top: -25px;
   }
   .showcase-track {
     gap: 11px;
