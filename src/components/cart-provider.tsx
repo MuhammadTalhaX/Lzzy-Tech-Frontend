@@ -1,10 +1,16 @@
 "use client";
+
 import { useEffect } from "react";
 import { useCartStore } from "@/store/cart-store";
-export function CartProvider({ children }: { children: React.ReactNode }) {
-  const rehydrate = useCartStore.persist.rehydrate;
+
+export function CartProvider({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   useEffect(() => {
-    void rehydrate();
-  }, [rehydrate]);
-  return children;
+    useCartStore.persist.rehydrate();
+  }, []);
+
+  return <>{children}</>;
 }
