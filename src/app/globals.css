@@ -207,6 +207,7 @@ p {
     border-color 0.2s;
 }
 .button-dark {
+  margin-top: 10px;
   background: var(--graphite);
   color: white;
 }

@@ -107,7 +107,7 @@ export function HeroShowcase() {
       setActiveImage((current) => {
         return (current + 1) % heroImages.length;
       });
-    }, 6000);
+    }, 5000);
 
     return () => {
       window.clearInterval(intervalId);
@@ -168,11 +168,6 @@ export function HeroShowcase() {
             ))}
           </div>
         </Link>
-      </div>
-
-      <div className="showcase-caption">
-        <span>{currentImage.brand}</span>
-        <strong>{currentImage.category}</strong>
       </div>
 
       <div className="hero-bottomline">
