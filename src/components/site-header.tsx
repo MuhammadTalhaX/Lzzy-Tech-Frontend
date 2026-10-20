@@ -23,7 +23,7 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="header-inner">
         <Link href="/" className="wordmark" aria-label="Lzzy Tech home">
-          lzzy<span>.</span>tech
+          Lzzy<span>Tech</span>
         </Link>
         <nav className="desktop-nav" aria-label="Main navigation">
           {links.map(([label, href]) => (
