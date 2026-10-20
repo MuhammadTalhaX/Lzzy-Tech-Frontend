@@ -107,7 +107,7 @@ export function HeroShowcase() {
       setActiveImage((current) => {
         return (current + 1) % heroImages.length;
       });
-    }, 5000);
+    }, 4000);
 
     return () => {
       window.clearInterval(intervalId);

@@ -60,6 +60,11 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/brands/page.js"
+    ],
+    "/products/[slug]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/products/[slug]/page.js"
     ]
   }
 }

@@ -1699,7 +1699,7 @@ body {
 .editorial-hero {
   max-width: 1600px;
   margin: 0 auto;
-  padding: 70px 0 0;
+  padding: 30px 0 0;
   overflow: hidden;
 }
 .editorial-hero-copy {
@@ -1724,7 +1724,7 @@ body {
   color: var(--color-accent);
 }
 .editorial-hero-copy p {
-  margin: 19px 0 23px;
+  margin: 19px 0 8px;
   color: var(--color-muted);
   font-size: 15px;
 }
@@ -1758,7 +1758,7 @@ body {
 
 .showcase-window {
   width: 100%;
-  margin: 42px auto 0;
+  margin: -70px auto 0;
   padding: 0 24px;
   display: flex;
   justify-content: center;
@@ -1837,7 +1837,7 @@ body {
 /* Mobile */
 @media (max-width: 700px) {
   .showcase-window {
-    margin-top: 32px;
+    margin-top: 10px;
     padding: 0 18px;
   }
 
